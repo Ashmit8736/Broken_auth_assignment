@@ -25,9 +25,12 @@ API:
 POST /auth/login
 
 Request Body:
+
 {
+
   "email": "ashmit873697@gmail.com",
   "password": "password123"
+  
 }
 
 Terminal Output:
@@ -36,8 +39,11 @@ POST /auth/login
 POST /auth/login -> 200 (5ms)
 
 Response:
+
 {
+
   "loginSessionId": "6c51203cbd1a75df"
+  
 }
 
 Explanation:
@@ -51,9 +57,12 @@ API:
 POST /auth/verify-otp
 
 Request Body:
+
 {
+
   "loginSessionId": "6c51203cbd1a75df",
   "otp": "406597"
+  
 }
 
 Terminal Output:
@@ -61,8 +70,11 @@ POST /auth/verify-otp
 POST /auth/verify-otp -> 200 (2ms)
 
 Response:
+
 {
+
   "message": "OTP verified"
+  
 }
 
 Explanation:
@@ -82,20 +94,29 @@ Terminal Output:
 POST /auth/token
 Cookie received: 2b0455121c0bbf52afa13db9d01e65f8
 All login sessions:
+
 {
-  "6c51203cbd1a75df": {
+
+  "6c51203cbd1a75df": 
+  
+{
   
     "email": "ashmit873697@gmail.com",
     "otp": "406597",
     "sessionToken": "2b0455121c0bbf52afa13db9d01e65f8"
  
-  }
 }
+  
+}
+
 POST /auth/token -> 200 (5ms)
 
 Response:
+
 {
+
     "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFzaG1pdDg3MzY5N0BnbWFpbC5jb20iLCJpYXQiOjE3NzEwMDI2NTMsImV4cCI6MTc3MTAwNjI1M30.63TpVEGRvnJwOeOjmw-hG0HGl0cJcBihKewan8yUJaQ"
+    
 }
 
 Explanation:
@@ -116,14 +137,22 @@ GET /protected
 GET /protected -> 200 (124ms)
 
 Response:
+
 {
+
   "message": "Access granted",
-  "user": {
+  "user": 
+  
+{
+
     "email": "ashmit873697@gmail.com",
     "iat": 1771002653,
     "exp": 1771006253
-  },
+    
+},
+
   "success_flag": "P9JB/UfJ/lH0qSqBGak0G/CViLEb8tpArmc+5OorhQY="
+  
 }
 
 Explanation:
