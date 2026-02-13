@@ -112,7 +112,7 @@ To submit your assignment:
 3.  Share the link to your repository.
 =======
 
-##BROKEN AUTHENTICATION ASSIGNMENT 
+**BROKEN AUTHENTICATION ASSIGNMENT**
 
  "Fixed and completed a broken authentication system using Node.js and Express. Implemented secure login, OTP verification, session-based JWT issuance, and protected routes with proper environment variable handling and middleware fixes.”
 
@@ -133,7 +133,7 @@ Terminal Output:
 [dotenv@17.2.4] injecting env (3) from .env
 Server running on port 3000
 
-#STEP 1 – LOGIN
+**STEP 1 – LOGIN**
 
 API:
 POST /auth/login
@@ -159,7 +159,7 @@ Explanation:
 • A temporary login session is created
 • A 6-digit OTP is generated and logged on server
 
-#STEP 2 – VERIFY OTP
+**STEP 2 – VERIFY OTP**
 
 API:
 POST /auth/verify-otp
@@ -215,7 +215,7 @@ Explanation:
 • JWT access token generated using JWT_SECRET
 • Token contains authenticated user email
 
-#STEP 4 – ACCESS PROTECTED ROUTE
+**STEP 4 – ACCESS PROTECTED ROUTE**
 
 API:
 GET /protected
@@ -243,14 +243,14 @@ Explanation:
 • User identity extracted from token
 • Unique success_flag generated using secure HMAC logic  
 
- #BUG ANALYSIS
+ **BUG ANALYSIS**
 
 This document explains all major bugs found in the original (commented)
 codebase and the fixes applied to make the authentication flow work correctly.
 
 
 
-#1. ENVIRONMENT VARIABLE ISSUE (MAIN BUG)
+**1. ENVIRONMENT VARIABLE ISSUE (MAIN BUG)**
 
 ❌ PROBLEM
 APPLICATION_SECRET was always undefined.
@@ -284,7 +284,7 @@ require("dotenv").config();
 ✅ RESULT
 Environment variables load correctly and token generation works.
 
-#2. LOGIN VALIDATION LOGIC BUG
+**2. LOGIN VALIDATION LOGIC BUG**
 
 ❌ ISSUE CODE (Commented)
 if (!email || !password) {
@@ -304,7 +304,7 @@ if (!email || password !== "password123") {
 Assignment requires a fixed password for testing consistency.
 
 
-#3. OTP VERIFICATION TYPE MISMATCH (CRITICAL)
+**3. OTP VERIFICATION TYPE MISMATCH (CRITICAL)**
 
 ❌ ISSUE CODE (Commented)
 if (parseInt(otp) !== otpStore[loginSessionId]) {
@@ -323,7 +323,7 @@ if (session.otp !== otp.toString()) {
 ✅ RESULT
 OTP verification works correctly.
 
-#4. SESSION COOKIE HANDLING BUG (BIG FIX)
+**4. SESSION COOKIE HANDLING BUG (BIG FIX)**
 
 ❌ ISSUE CODE (Commented)
 res.cookie("session_token", loginSessionId);
@@ -343,7 +343,7 @@ res.cookie("session_token", sessionToken, {
 ✅ RESULT
 Proper session token is stored and validated securely.
 
-#5. TOKEN EXCHANGE FLOW BUG
+**5. TOKEN EXCHANGE FLOW BUG**
 
 ❌ ISSUE CODE (Commented)
 const token = req.headers.authorization;
@@ -366,7 +366,7 @@ const session = Object.values(loginSessions).find(
 ✅ RESULT
 JWT is correctly issued using session cookie.
 
-#6. JWT SECRET HANDLING ISSUE
+**6. JWT SECRET HANDLING ISSUE**
 
 ❌ PROBLEM
 JWT verification failed when env variables were missing.
@@ -380,7 +380,7 @@ const jwtSecret = process.env.JWT_SECRET || "default-secret-key";
 ✅ RESULT
 JWT verification works reliably.
 
-#7. PROTECTED ROUTE ASYNC ERROR
+**7. PROTECTED ROUTE ASYNC ERROR**
 
 ❌ ISSUE CODE (Commented)
 app.get("/protected", authMiddleware, (req, res) => {
@@ -405,7 +405,7 @@ app.get("/protected", authMiddleware, async (req, res) => {
 ✅ RESULT
 Protected route returns 200 OK with success_flag.
 
-#FINAL STATUS
+**FINAL STATUS**
 
 ✔ Login works
 ✔ OTP verification works
