@@ -161,7 +161,7 @@ Rename file:
 .env          ✅
 
 Correct `.env` file:
-APPLICATION_SECRET=mongodb+srv://akashmit8736_db_user:Ashmit8736@cluster0.m5mq3v9.mongodb.net/Assignment
+APPLICATION_SECRET=mongodb+srv://akashmit8736_db_user:<db_password>cluster0.m5mq3v9.mongodb.net/Assignment
 JWT_SECRET=my_jwt_secret
 PORT=3000
 
