@@ -112,7 +112,7 @@ To submit your assignment:
 3.  Share the link to your repository.
 =======
 
-#BROKEN AUTHENTICATION ASSIGNMENT 
+##BROKEN AUTHENTICATION ASSIGNMENT 
 
  "Fixed and completed a broken authentication system using Node.js and Express. Implemented secure login, OTP verification, session-based JWT issuance, and protected routes with proper environment variable handling and middleware fixes.”
 
