@@ -1,7 +1,6 @@
-
 **BROKEN AUTHENTICATION (Backend Debugging) ASSIGNMENT**
 
- "Fixed and completed a broken authentication system using Node.js and Express. Implemented secure login, OTP verification, session-based JWT issuance, and protected routes with proper environment variable handling and middleware fixes.”
+**Fixed and completed a broken authentication system using Node.js and Express. Implemented secure login, OTP verification, session-based JWT issuance, and protected routes with proper environment variable handling and middleware fixes.**
 
 Project Name : Broken Authentication Assignment
 Tech Stack   : Node.js, Express.js, JWT, Cookies
@@ -9,7 +8,7 @@ Server Port  : 3000
 Environment  : Local Development
 
 
-**STEP 0 – SERVER START**
+**SERVER START**
 
 Command:
 npx nodemon
@@ -85,9 +84,11 @@ Cookie received: 2b0455121c0bbf52afa13db9d01e65f8
 All login sessions:
 {
   "6c51203cbd1a75df": {
+  
     "email": "ashmit873697@gmail.com",
     "otp": "406597",
     "sessionToken": "2b0455121c0bbf52afa13db9d01e65f8"
+ 
   }
 }
 POST /auth/token -> 200 (5ms)
